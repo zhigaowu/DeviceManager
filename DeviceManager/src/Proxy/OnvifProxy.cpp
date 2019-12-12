@@ -16,9 +16,6 @@ OnvifProxy::OnvifProxy()
     memset(_endpoint, 0, sizeof(_endpoint));
     memset(_msgid, 0, sizeof(_msgid));
 
-    soap_default_SOAP_ENV__Header(_proxy, &_header);
-    _header.wsa5__MessageID = _msgid;
-
     _proxy->header = &_header;
 }
 
@@ -36,9 +33,6 @@ OnvifProxy::OnvifProxy(const char* endpoint, int connect_timeout, int send_timeo
 
     memset(_msgid, 0, sizeof(_msgid));
 
-    soap_default_SOAP_ENV__Header(_proxy, &_header);
-    _header.wsa5__MessageID = _msgid;
-
     _proxy->header = &_header;
 }
 
@@ -49,12 +43,19 @@ OnvifProxy::~OnvifProxy()
     soap_free(_proxy);
 }
 
-void OnvifProxy::UpdateHeaderMessageId()
+void OnvifProxy::resetHeader()
+{
+    soap_default_SOAP_ENV__Header(_proxy, &_header);
+}
+
+void OnvifProxy::updateHeaderMessageId()
 {
     static int uid_head = 1000;
-    
+
     memset(_msgid, 0, sizeof(_msgid));
     sprintf(_msgid, "urn:uuid:%ud68a-1dd2-11b2-a105-010203040506", uid_head++);
+
+    _header.wsa5__MessageID = _msgid;
 
     if (uid_head >= 10000)
     {

@@ -30,6 +30,9 @@ int OnvifDeviceProxy::GetCapabilities(struct _tds__GetCapabilitiesResponse& capc
     req.__sizeCategory = sizeof(categories)/sizeof(tt__CapabilityCategory);
     req.Category = categories;
 
+    resetHeader();
+    updateHeaderMessageId();
+
     addUsernameTokenDigest(_username, _password);
     
     int res = soap_call___tds__GetCapabilities(_proxy, _endpoint, "http://www.onvif.org/ver10/device/wsdl/GetCapabilities", &req, &_capcities);
@@ -45,6 +48,9 @@ int OnvifDeviceProxy::GetMediaProfiles(struct _trt__GetProfilesResponse& profile
     if (_capcities.Capabilities)
     {
         struct _trt__GetProfiles req;
+
+        resetHeader();
+        updateHeaderMessageId();
 
         addUsernameTokenDigest(_username, _password);
 
@@ -80,6 +86,9 @@ int OnvifDeviceProxy::GetMediaUri(struct _trt__GetStreamUriResponse& uri, enum t
         req.StreamSetup = &StreamSetup;
         req.ProfileToken = _media.Profiles->token;
 
+        resetHeader();
+        updateHeaderMessageId();
+
         addUsernameTokenDigest(_username, _password);
 
         return soap_call___trt__GetStreamUri(_proxy, _capcities.Capabilities->Media->XAddr, "http://www.onvif.org/ver10/media/wsdl/GetStreamUri", &req, &uri);
@@ -93,6 +102,9 @@ int OnvifDeviceProxy::GetMediaUri(struct _trt__GetStreamUriResponse& uri, enum t
 int OnvifDeviceProxy::GetDeviceInformation(struct _tds__GetDeviceInformationResponse& deviceInfomation)
 {
     struct _tds__GetDeviceInformation req;
+
+    resetHeader();
+    updateHeaderMessageId();
 
     addUsernameTokenDigest(_username, _password);
 

@@ -21,8 +21,8 @@ OnvifDiscoveryProxy::~OnvifDiscoveryProxy()
 
 int OnvifDiscoveryProxy::BroadcastProbe()
 {
-    static const char* const was_To = "urn:schemas-xmlsoap-org:ws:2005:04:discovery";
-    static const char* const was_Action = "http://schemas.xmlsoap.org/ws/2005/04/discovery/Probe";
+    static char* was_To = "urn:schemas-xmlsoap-org:ws:2005:04:discovery";
+    static char* was_Action = "http://schemas.xmlsoap.org/ws/2005/04/discovery/Probe";
 
     struct wsdd__ProbeType req;
     struct wsdd__ScopesType scopes;
@@ -33,15 +33,12 @@ int OnvifDiscoveryProxy::BroadcastProbe()
     req.Scopes = &scopes;
     req.Types = "tdn:NetworkVideoTransmitter";
 
-    _header.wsa5__Action = (char *)malloc(256);
-    memset(_header.wsa5__Action, '\0', 256);
-    strncpy(_header.wsa5__Action, was_Action, strlen(was_Action));
+    resetHeader();
 
-    _header.wsa5__To = (char *)malloc(256);
-    memset(_header.wsa5__To, '\0', 256);
-    strncpy(_header.wsa5__To, was_To, strlen(was_To));
+    _header.wsa5__Action = was_To;
+    _header.wsa5__To = was_Action;
     
-    UpdateHeaderMessageId();
+    updateHeaderMessageId();
 
     return soap_send___wsdd__Probe(_proxy, _endpoint, NULL, &req);
 }

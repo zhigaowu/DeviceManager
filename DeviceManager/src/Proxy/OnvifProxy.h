@@ -11,7 +11,8 @@ public:
     virtual ~OnvifProxy();
 
 protected:
-    void UpdateHeaderMessageId();
+    void resetHeader();
+    void updateHeaderMessageId();
 
 protected:
     struct SOAP_ENV__Header _header;
