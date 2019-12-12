@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Proxy">
+      <UniqueIdentifier>{e0648c77-d7e2-4ff2-848e-51f3363f44ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Discovery">
+      <UniqueIdentifier>{0154b4e9-d736-4f81-844a-7a726ab84f40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Device">
+      <UniqueIdentifier>{07b8787a-2263-4f73-b1f3-b3d59ba3b3ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="gsoap">
+      <UniqueIdentifier>{0e258df4-a7f9-47f7-9c19-e4ed151d3128}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Discovery\OnvifDiscoveryProxy.h">
+      <Filter>Discovery</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Proxy\OnvifProxy.h">
+      <Filter>Proxy</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Device\OnvifDeviceProxy.h">
+      <Filter>Device</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Proxy\OnvifAuthProxy.h">
+      <Filter>Proxy</Filter>
+    </ClInclude>
+    <ClInclude Include="src\gsoap\mecevp.h">
+      <Filter>gsoap</Filter>
+    </ClInclude>
+    <ClInclude Include="src\gsoap\smdevp.h">
+      <Filter>gsoap</Filter>
+    </ClInclude>
+    <ClInclude Include="src\gsoap\threads.h">
+      <Filter>gsoap</Filter>
+    </ClInclude>
+    <ClInclude Include="src\gsoap\wsaapi.h">
+      <Filter>gsoap</Filter>
+    </ClInclude>
+    <ClInclude Include="src\gsoap\wsseapi.h">
+      <Filter>gsoap</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DeviceManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Discovery\OnvifDiscoveryProxy.cpp">
+      <Filter>Discovery</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Proxy\OnvifProxy.cpp">
+      <Filter>Proxy</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Device\OnvifDeviceProxy.cpp">
+      <Filter>Device</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Proxy\OnvifAuthProxy.cpp">
+      <Filter>Proxy</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gsoap\mecevp.c">
+      <Filter>gsoap</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gsoap\smdevp.c">
+      <Filter>gsoap</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gsoap\threads.c">
+      <Filter>gsoap</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gsoap\wsaapi.c">
+      <Filter>gsoap</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gsoap\wsseapi.c">
+      <Filter>gsoap</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gsoap\dom.c">
+      <Filter>gsoap</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
