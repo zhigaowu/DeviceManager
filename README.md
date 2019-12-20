@@ -5,3 +5,4 @@ onvif client device management code, functions have implemented: Discovery, Capa
   - this project contains only three onvif operation interface: DeviceBinding.xml, MediaBinding.xml, RemoteDiscoveryBinding.xml
   - use openssl 1.0.1g
   - not build for linux
+  - licensed under MIT License
